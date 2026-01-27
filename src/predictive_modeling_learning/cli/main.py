@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import click
 
+from predictive_modeling_learning.cli.regression import regression
 
 @click.group()
 def cli() -> None:
@@ -17,6 +18,7 @@ def cli() -> None:
     """
     pass
 
+cli.add_command(regression)
 
 if __name__ == "__main__":
     cli()
