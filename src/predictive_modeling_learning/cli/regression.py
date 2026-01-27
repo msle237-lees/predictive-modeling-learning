@@ -337,6 +337,105 @@ def linear_plot(
     else:
         raise click.ClickException("Invalid plot type.")
 
+# ----------------------------
+# Subgroup: polynomial regression
+# ----------------------------
+@regression.group()
+def polynomial():
+    """Polynomial regression model commands."""
+    pass
+
+@polynomial.command("train")
+def polynomial_train():
+    """
+    @brief Train a polynomial regression model.
+    """
+    click.echo("Polynomial regression training not yet implemented.")
+
+@polynomial.command("metrics")
+def polynomial_metrics():
+    """
+    @brief Export polynomial regression metrics.
+    """
+    click.echo("Polynomial regression metrics not yet implemented.")
+
+@polynomial.command("equation")
+def polynomial_equation():
+    """
+    @brief Export polynomial regression equation.
+    """
+    click.echo("Polynomial regression equation not yet implemented.")
+
+@polynomial.command("coeffs")
+def polynomial_coeffs():
+    """
+    @brief Export polynomial regression coefficients.
+    """
+    click.echo("Polynomial regression coefficients not yet implemented.")
+
+@polynomial.command("predictions")
+def polynomial_predictions():
+    """
+    @brief Export polynomial regression predictions.
+    """
+    click.echo("Polynomial regression predictions not yet implemented.")
+
+@polynomial.command("plot")
+def polynomial_plot():
+    """
+    @brief Show polynomial regression diagnostic plots.
+    """
+    click.echo("Polynomial regression plotting not yet implemented.")
+
+# ----------------------------
+# Subgroup: Support Vector Regression
+# ----------------------------
+@regression.group()
+def svr():
+    """Support Vector Regression model commands."""
+    pass
+
+@svr.command("train")
+def svr_train():
+    """
+    @brief Train a Support Vector Regression model.
+    """
+    click.echo("Support Vector Regression training not yet implemented.")
+
+@svr.command("metrics")
+def svr_metrics():
+    """
+    @brief Export Support Vector Regression metrics.
+    """
+    click.echo("Support Vector Regression metrics not yet implemented.")
+
+@svr.command("equation")
+def svr_equation():
+    """
+    @brief Export Support Vector Regression equation.
+    """
+    click.echo("Support Vector Regression equation not yet implemented.")
+
+@svr.command("coeffs")
+def svr_coeffs():
+    """
+    @brief Export Support Vector Regression coefficients.
+    """
+    click.echo("Support Vector Regression coefficients not yet implemented.")
+
+@svr.command("predictions")
+def svr_predictions():
+    """
+    @brief Export Support Vector Regression predictions.
+    """
+    click.echo("Support Vector Regression predictions not yet implemented.")
+
+@svr.command("plot")
+def svr_plot():
+    """
+    @brief Show Support Vector Regression diagnostic plots.
+    """
+    click.echo("Support Vector Regression plotting not yet implemented.")
 
 # ----------------------------
 # Entry point (optional)

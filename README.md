@@ -4,7 +4,7 @@ A repository containing my learning experience with programming various predicti
 Models I want to implement include:
 - Regression Models (Continuous Value Prediction)
     - [X] Linear Regression: Predicts a target numerical value based on input features.
-    - [] Polynomial Regression: Models relationships as \(n\)-th degree polynomials.
+    - [X] Polynomial Regression: Models relationships as \(n\)-th degree polynomials.
     - [] Support Vector Regression (SVR): Finds a hyperplane to fit data points within a threshold.
 - Classification Models (Categorical Prediction)
     - [] Logistic Regression: Predicts binary outcomes (yes/no).
@@ -36,3 +36,20 @@ Models I want to implement include:
     - Model Selection & Training: Choose algorithms based on data type and split data into training/validation sets.
     - Evaluation & Tuning: Use metrics (e.g., accuracy, ROC-AUC) to test performance and optimize hyperparameters.
     - Deployment: Implement the final model for real-time or batch prediction. 
+
+## Getting Started
+To get started with this project, clone the repository and set up the required environment.
+
+```bash
+git clone https://github.com/msle237-lees/predictive-modeling-learning.git
+cd predictive-modeling-learning
+
+# Create a virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+pip install .
+
+# Run the CLI
+python -m predictive_modeling_learning.cli.main --help
+
+```

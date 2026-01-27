@@ -21,7 +21,7 @@ Date: 2026-01-26
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Dict, Optional
+from typing import Dict, Optional, Tuple
 
 import numpy as np
 import pandas as pd
@@ -76,7 +76,7 @@ class LinearModel:
         target_column: str,
         test_size: float = 0.2,
         random_state: int = 42,
-    ):
+        ) -> Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
         """
         Split dataframe into train/test.
 
