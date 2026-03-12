@@ -3,22 +3,20 @@
 @brief Root Click CLI entrypoint for predictive modeling learning project.
 """
 
-from __future__ import annotations
-
 import click
 
-from predictive_modeling_learning.cli.regression import regression
 
 @click.group()
-def cli() -> None:
-    """
-    @brief Predictive Modeling CLI root group.
-
-    Subcommands are grouped by modeling category (regression, classification, etc.).
-    """
+def pml():
+    """Predictive Modeling Learning CLI"""
     pass
 
-cli.add_command(regression)
 
-if __name__ == "__main__":
-    cli()
+@click.group()
+def regression():
+    """Regression models"""
+    pass
+
+
+# Add model groups to pml
+pml.add_command(regression)
