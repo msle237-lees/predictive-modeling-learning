@@ -79,12 +79,76 @@ src/predictive_modeling_learning/
 │       └── recurrent.py
 ├── io/
 │   ├── __init__.py
-│   ├── loaders.py           # CSV, JSON, sklearn datasets
-│   ├── db.py                # Keep as-is
-│   ├── preprocessor.py      # NEW: scaling, encoding, imputation
-│   └── splitter.py          # NEW: train/val/test, cross-val
+│   ├── csv_loader.py
+│   ├── db_loader.py
+│   ├── loaders.py
+│   ├── preprocessor.py
+│   └── splitter.py
 └── utils/
     ├── __init__.py
-    ├── metrics.py           # NEW: shared metric helpers
-    └── serialization.py     # NEW: save/load model artifacts
+    ├── metrics.py
+    └── serialization.py
 ```
+
+---
+
+## To Do
+
+### Phase 1 — Data Layer
+- [X] `io/csv_loader.py` — load CSV files into a DataFrame
+- [X] `io/db_loader.py` — connect, query, list_tables, inspect_table
+- [X] `io/loaders.py` — unified load() entry point for csv and db sources
+- [X] `io/preprocessor.py` — scaling, encoding, imputation
+- [ ] `io/splitter.py` — train/test split, returns DataBundle
+
+### Phase 2 — Model Foundation
+- [ ] `models/base.py` — AbstractBaseModel with build, train, predict, evaluate, save, load
+- [ ] `models/registry.py` — MODEL_REGISTRY dict and @register decorator
+
+### Phase 3 — Models
+#### Regression
+- [ ] `models/regression/linear.py` — Linear Regression
+- [ ] `models/regression/polynomial.py` — Polynomial Regression
+
+#### Classification
+- [ ] `models/classification/logistic_regression.py` — Logistic Regression
+- [ ] `models/classification/decision_tree.py` — Decision Tree
+- [ ] `models/classification/random_forests.py` — Random Forest
+- [ ] `models/classification/support_vector_machines.py` — SVM
+- [ ] `models/classification/naive_bayes.py` — Naive Bayes
+- [ ] `models/classification/k_nearest_neighbors.py` — KNN
+- [ ] `models/classification/gradient_boosting.py` — Gradient Boosting
+
+#### Clustering
+- [ ] `models/clustering/k_means.py` — K-Means
+- [ ] `models/clustering/hierarchical.py` — Hierarchical Clustering
+- [ ] `models/clustering/density_based.py` — DBSCAN
+
+#### Time Series
+- [ ] `models/time_series/arima.py` — ARIMA
+- [ ] `models/time_series/exponential_smoothing.py` — Exponential Smoothing
+
+#### Neural Networks
+- [ ] `models/neural_networks/neural_networks.py` — MLP
+- [ ] `models/neural_networks/convolutional.py` — CNN
+- [ ] `models/neural_networks/recurrent.py` — RNN
+- [ ] `models/neural_networks/deep_learning.py` — Deep Learning
+
+### Phase 4 — Utilities
+- [ ] `utils/metrics.py` — shared metric helpers per model category
+- [ ] `utils/serialization.py` — save/load model artifacts via joblib
+
+### Phase 5 — CLI Layer
+- [ ] `cli/main.py` — root click group, registers all subgroups
+- [ ] `cli/common.py` — shared click options/decorators
+- [ ] `cli/regression.py` — commands: linear, polynomial
+- [ ] `cli/classification.py` — commands: logistic, decision-tree, random-forest, svm, naive-bayes, knn, gradient-boosting
+- [ ] `cli/clustering.py` — commands: kmeans, hierarchical, dbscan
+- [ ] `cli/time_series.py` — commands: arima, exp-smoothing
+- [ ] `cli/neural.py` — commands: mlp, cnn, rnn, deep
+
+### Phase 6 — Testing
+- [ ] Tests for `io/` layer
+- [ ] Tests for `models/base.py` and registry
+- [ ] Tests for each model category
+- [ ] End-to-end CLI tests
